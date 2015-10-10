@@ -1,4 +1,5 @@
 <!--
+@license
 Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
 This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
 The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
@@ -6,7 +7,21 @@ The complete set of contributors may be found at http://polymer.github.io/CONTRI
 Code distributed by Google as part of the polymer project is also
 subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
 -->
+<script>
 
-<link rel="import" href="layout.html">
+  Polymer.Base._addFeature({
 
-<script src="polymer.js"></script>
+    resolveUrl: function(url) {
+      // TODO(sorvell): do we want to put the module reference on the prototype?
+      var module = Polymer.DomModule.import(this.is);
+      var root = '';
+      if (module) {
+        var assetPath = module.getAttribute('assetpath') || '';
+        root = Polymer.ResolveUrl.resolveUrl(assetPath, module.ownerDocument.baseURI);
+      }
+      return Polymer.ResolveUrl.resolveUrl(url, root);
+    }
+
+  });
+
+</script>
