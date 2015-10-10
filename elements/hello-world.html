@@ -5,3 +5,34 @@
     <h1>Hello World</h1>
   </template>
 </polymer-element>
+
+
+<polymer-element name="fav-color">
+  <template>
+    <p>This is {{name}}'s <span style="color: {{color}}">fav-color</span></p>
+  </template>
+  <script>
+    Polymer({
+      name: "Ilias",
+      color: "pink"
+    });
+  </script>
+</polymer-element>
+
+<polymer-element name="count-button" extends="button" on-click="increment">
+  <template>
+    <style>
+      :host {
+        color: white;
+        background: black;
+      }
+    </style>
+    Increment: {{counter}}
+  </template>
+  <script>
+    Polymer({
+      counter: 0,
+      increment: function(e, detail, sender) { this.counter++ }
+    })
+  </script>
+</polymer-element>

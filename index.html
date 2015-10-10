@@ -3,9 +3,26 @@
   <head>
     <title>Title</title>
     <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+    <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+    <!-- maps -->
+    <link rel="import" href="bower_components/google-map/google-map.html">
+    <link rel="import" href="bower_components/google-map/google-map-marker.html">
+    <link rel="import" href="bower_components/google-map/google-map-directions.html">
+
     <link rel="import" href="elements/hello-world.html">
   </head>
   <body>
-    <hello-world></hello-world>
+<!--     <hello-world></hello-world>
+    <fav-color></fav-color>
+    <button is="count-button"></button> -->
+    <paper-tabs selected="0">
+      <paper-tab>One</paper-tab>
+      <paper-tab>Two</paper-tab>
+      <paper-tab>Three</paper-tab>
+    </paper-tabs>
+    <google-map latitude="45" longitude="0" language="en" style="height: 600px;">
+      <google-map-marker latitude="45" longitude="0" draggable="true">
+      </google-map-marker>
+    </google-map>
   </body>
 </html>
