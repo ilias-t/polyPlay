@@ -1,0 +1,22 @@
+{
+  "name": "polymer",
+  "version": "0.0.0",
+  "authors": [
+    "Ilias Tsangaris <iliastsangaris@gmail.com>"
+  ],
+  "description": "playin",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~1.1.5"
+  }
+}
